@@ -8,8 +8,11 @@
 
 # colortool: https://github.com/Microsoft/Console/tree/master/tools/ColorTool
 
-# Write-Output $PSScriptRoot
-# . "$PSScriptRoot/alias.ps1"
+
+function OS-Architecture {
+    # win32NT, Unix
+    [ENVIRONMENT]::OSVersion.Platform
+}
 
 #
 # Aliases
@@ -34,9 +37,6 @@ function Docker-ListImages {
     & docker image ls $args
 }
 
-function Flush-DNS {
-    & ipconfig /flushdns
-}
 
 
 # Aliases
@@ -81,3 +81,15 @@ function Set-KeyVaultGetPolicy {
 
 
 . "$PSScriptRoot/azure.ps1"
+
+
+if ((OS-Architecture) -eq "win32NT") {
+    . "$PSScriptRoot/profile.windows.ps1"
+}
+else {
+    . "$PSScriptRoot/profile.macos.ps1"
+}
+
+
+# Write-Output $PSScriptRoot
+
