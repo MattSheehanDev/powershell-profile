@@ -50,6 +50,7 @@ New-Alias -Name dli -Value Docker-ListImages -Force -Option AllScope -Descriptio
 New-Alias -Name cwd -Value Get-Location -Option AllScope -Description "current working dir"
 New-Alias -Name flushdns -Value Flush-DNS -Option AllScope -Description "flush dns"
 New-Alias -Name hosts -Value Open-Hosts -Option AllScope -Description "open hosts file"
+New-Alias -Name npmcc -Value Npm-Clean-Cache -Option AllScope -Description "npm clean cache"
 
 
 

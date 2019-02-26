@@ -22,5 +22,30 @@ function Open-Hosts () {
 
 
 # npm-cache
-# C:\Users\matt.sheehan\AppData\Roaming\npm-cache
+# Default location (Windows):
+#   C:\Users\matt.sheehan\AppData\Roaming\npm-cache
+#   %AppData%\npm-cache
+function Npm-Clean-Cache() {
+    npm cache clean --force
+}
+
+# yarn-cache
+# Default location (Windows):
+#   C:\Users\matt.sheehan\AppData\Local\Yarn\Cache\v4
+#   %AppData%\Local\Yarn\Cache\v4
+function Yarn-Clean-Cache() {
+    yarn cache clean
+}
+
+
+#
+# Windows specific environment variables
+#
+
+# Set yarn cache dir to D: drive so that it doesn't take up to much main drive space.
+# https://yarnpkg.com/lang/en/docs/cli/cache/#toc-change-the-cache-path-for-yarn
+$Env:YARN_CACHE_FOLDER = "D:\Yarn\Cache"
+
+# Set npm cache dir to D: drive as well
+$Env:npm_config_cache = "D:\Npm\npm-cache"
 
