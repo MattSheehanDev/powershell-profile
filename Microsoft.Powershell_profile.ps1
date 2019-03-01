@@ -52,6 +52,7 @@ New-Alias -Name flushdns -Value Flush-DNS -Option AllScope -Description "flush d
 New-Alias -Name hosts -Value Open-Hosts -Option AllScope -Description "open hosts file"
 New-Alias -Name npmcc -Value Npm-Clean-Cache -Option AllScope -Description "npm clean cache"
 
+New-Alias -Name admin -Value Open-Admin-Shell -Option AllScope -Description "open administrator powershell"
 
 
 

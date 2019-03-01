@@ -37,6 +37,12 @@ function Yarn-Clean-Cache() {
     yarn cache clean
 }
 
+# Open admin powershell in the current directory
+function Open-Admin-Shell() {
+    $path = (cwd).Path
+    Start-Process PowerShell -Verb RunAs -ArgumentList "-noexit -command `"cd `"${path}`" `""
+}
+
 
 #
 # Windows specific environment variables
