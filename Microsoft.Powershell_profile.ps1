@@ -22,7 +22,6 @@ function version {
 
 
 
-
 . "$PSScriptRoot/alias.ps1"
 . "$PSScriptRoot/azure.ps1"
 

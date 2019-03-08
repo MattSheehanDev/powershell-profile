@@ -74,6 +74,21 @@ Function Export-AppServiceCertificate {
 }
 
 
+
+function Set-KeyVaultGetPolicy {
+    Param(
+        [Parameter(Mandatory = $true, Position = 1, HelpMessage = "ARM Login Url")]
+        [string]$loginId,
+
+        [Parameter(Mandatory = $true, HelpMessage = "Key Vault Name")]
+        [string]$keyvaultName
+    )
+
+    Set-AzureRmKeyVaultAccessPolicy -ResourceGroupName "Infrastructure" -VaultName "$keyvaultName" -UserPrincipalName "$loginId" -PermissionsToSecrets get
+}
+
+
+
 # function Export-AppServiceCertificate2 {
 #     $azureLoginEmailId = "mattsheehan@apteryxinc.onmicrosoft.com"
 #     $subscriptionName = "XVWeb2"
