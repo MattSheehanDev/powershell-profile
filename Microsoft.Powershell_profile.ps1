@@ -36,3 +36,25 @@ else {
 
 # Write-Output $PSScriptRoot
 
+
+# Shared Functions
+
+# npm-cache
+# Default location (macOS):
+#   ~/.npm
+# Default location (Windows):
+#   C:\Users\matt.sheehan\AppData\Roaming\npm-cache
+#   %AppData%\npm-cache
+function Npm-Clean-Cache() {
+    npm cache clean --force
+}
+
+# yarn-cache
+# Default location (macOS):
+#   ~/Library/Caches/Yarn
+# Default location (Windows):
+#   C:\Users\matt.sheehan\AppData\Local\Yarn\Cache
+#   %AppData%\Local\Yarn\Cache
+function Yarn-Clean-Cache() {
+    yarn cache clean
+}

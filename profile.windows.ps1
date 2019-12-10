@@ -23,21 +23,6 @@ function Open-Hosts () {
 }
 
 
-# npm-cache
-# Default location (Windows):
-#   C:\Users\matt.sheehan\AppData\Roaming\npm-cache
-#   %AppData%\npm-cache
-function Npm-Clean-Cache() {
-    npm cache clean --force
-}
-
-# yarn-cache
-# Default location (Windows):
-#   C:\Users\matt.sheehan\AppData\Local\Yarn\Cache\v4
-#   %AppData%\Local\Yarn\Cache\v4
-function Yarn-Clean-Cache() {
-    yarn cache clean
-}
 
 # Open admin powershell in the current directory
 function Open-Admin-Shell() {

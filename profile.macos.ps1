@@ -1,18 +1,12 @@
 
 
-# function mksymlink {
-#     ln -s /path/to/original /path/to/symlink
-# }
-
-
-# New-Alias -Name mksymdir -Value mksymlink -Option AllScope -Description "make symlink"
 
 # Make sure paths are absolute
 function mksymlink ($link, $symlink) {
-    # todo
+    ln -s $link $symlink
 }
 function mksymdir ($link, $symlink) {
-    # todo
+    ln -s $link $symlink
 }
 
 
@@ -24,27 +18,8 @@ function Flush-DNS {
 
 function Open-Hosts() {
     # todo
+    open -a textEdit "/etc/hosts"
 }
 
 
-# npm-cache
-# Default location (Windows):
-#   C:\Users\matt.sheehan\AppData\Roaming\npm-cache
-#   %AppData%\npm-cache
-function Npm-Clean-Cache() {
-    # todo
-}
-
-# yarn-cache
-# Default location (Windows):
-#   C:\Users\matt.sheehan\AppData\Local\Yarn\Cache\v4
-#   %AppData%\Local\Yarn\Cache\v4
-function Yarn-Clean-Cache() {
-    # todo
-}
-
-
-function Open-Admin-Shell() {
-    # todo
-}
 

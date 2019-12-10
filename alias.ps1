@@ -10,6 +10,20 @@ function Git-Add {
 function Git-Status {
     & git status $args
 }
+function Git-Push {
+    & git push
+    & git status
+}
+function Git-Reset {
+    & git reset $args
+}
+function Git-Reset-Soft {
+    Git-Reset --soft
+}
+function Git-Reset-Hard {
+    Git-Reset --hard
+}
+
 function Git-Branch {
     & git branch $args
 }
@@ -26,6 +40,13 @@ function Docker-ListImages {
 # Aliases
 New-Alias -Name gs -Value Git-Status -Force -Option AllScope -Description "git status"
 New-Alias -Name ga -Value Git-Add -Force -Option AllScope -Description "git add & git status"
+New-Alias -Name gc -Value Git-Commit -Force -Option AllScope -Description "git commit"
+New-Alias -Name gp -Value Git-Push -Force -Option AllScope -Description "git push"
+
+New-Alias -Name gr -Value Git-Push -Force -Option AllScope -Description "git reset"
+New-Alias -Name grs -Value Git-Push -Force -Option AllScope -Description "git reset soft"
+New-Alias -Name grh -Value Git-Push -Force -Option AllScope -Description "git reset hard"
+
 New-Alias -Name b -Value Git-Branch -Force -Option AllScope -Description "git branch"
 New-Alias -Name b -Value Git-Checkout -Force -Option AllScope -Description "git checkout"
 
