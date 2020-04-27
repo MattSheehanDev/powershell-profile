@@ -11,7 +11,7 @@
 # Helper functions
 #
 
-function OS-Architecture {
+function Get-OS-Architecture {
     # win32NT, Unix
     [ENVIRONMENT]::OSVersion.Platform
 }
@@ -26,7 +26,7 @@ function version {
 . "$PSScriptRoot/azure.ps1"
 
 
-if ((OS-Architecture) -eq "win32NT") {
+if ((Get-OS-Architecture) -eq "win32NT") {
     . "$PSScriptRoot/profile.windows.ps1"
 }
 else {
@@ -34,7 +34,42 @@ else {
 }
 
 
-# Write-Output $PSScriptRoot
+# Import Modules
+if (Test-Path "~/.powershell.d/posh-git/src/posh-git.psd1") {
+    Import-Module ~/.powershell.d/posh-git/src/posh-git.psd1
+}
+# Install-Package SemanticVersioning -Version 1.2.2
+# Import-Module ~/.powershell.d/ps-nvm/nvm.psd1
+
+
+# Set the shell Prompt
+function Prompt {
+
+    Write-Host $([Environment]::UserName) -NoNewLine -ForegroundColor Green
+
+    $cwd = (Get-Location)
+    $cwd = $cwd -replace "$($HOME)", "~"
+
+    Write-Host (" " + "$cwd") -NoNewline -ForegroundColor Yellow
+
+    if ((Get-Module posh-git)) {
+        $gitStatus = Get-GitStatus
+        if ($gitStatus) {
+            Write-Host " ($($gitStatus.Branch))" -NoNewline -ForegroundColor Cyan
+    
+            if ($gitStatus.Working.Length -gt 0) {
+                Write-Host "*" -NoNewline -ForegroundColor Red
+            }
+        }
+    
+    }
+
+    Write-Host " $" -NoNewline -ForegroundColor Yellow
+
+    return " "
+}
+
+
 
 
 # Shared Functions
@@ -45,7 +80,7 @@ else {
 # Default location (Windows):
 #   C:\Users\matt.sheehan\AppData\Roaming\npm-cache
 #   %AppData%\npm-cache
-function Npm-Clean-Cache() {
+function Clear-Npm-Cache() {
     npm cache clean --force
 }
 
@@ -55,6 +90,6 @@ function Npm-Clean-Cache() {
 # Default location (Windows):
 #   C:\Users\matt.sheehan\AppData\Local\Yarn\Cache
 #   %AppData%\Local\Yarn\Cache
-function Yarn-Clean-Cache() {
+function Clear-Yarn-Cache() {
     yarn cache clean
 }

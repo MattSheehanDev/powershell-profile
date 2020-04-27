@@ -11,7 +11,8 @@ function mksymdir ($link, $symlink) {
 }
 
 
-function Flush-DNS {
+# Flush DNS (flush is not an approved ps verb)
+function  Clear-DNS {
     & ipconfig /flushdns
 }
 
