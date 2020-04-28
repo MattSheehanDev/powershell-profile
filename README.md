@@ -9,3 +9,8 @@ cmd /c mklink /path/to/symlink/Microsoft.Powershell_profile.ps1 /path/to/Microso
 # And so on for each file sourced by the Microsoft.Powershell_profile.ps1
 ```
 
+## .powershell.d
+
+- External packages
+    - [posh-git](https://github.com/dahlbyk/posh-git)
+
