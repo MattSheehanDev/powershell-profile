@@ -27,7 +27,7 @@ function version {
 
 
 if ((Get-OS-Architecture) -eq "win32NT") {
-    . "$PSScriptRoot/profile.windows.ps1"
+    . "$PSScriptRoot\profile.windows.ps1"
 }
 else {
     . "$PSScriptRoot/profile.macos.ps1"
@@ -47,8 +47,9 @@ function Prompt {
 
     Write-Host $([Environment]::UserName) -NoNewLine -ForegroundColor Green
 
-    $cwd = (Get-Location)
-    $cwd = $cwd -replace "$($HOME)", "~"
+    $cwd = (Get-Location).Path
+    # $cwd = $cwd -replace "$($HOME)", "~"
+    $cwd = $cwd.Replace($HOME, "~")
 
     Write-Host (" " + "$cwd") -NoNewline -ForegroundColor Yellow
 

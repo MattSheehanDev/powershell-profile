@@ -1,12 +1,14 @@
 # Microsoft Powershell Profile
 
 Alias (or add) all files to your local user (host) profile.
-- Windows -- `$HOME/Documents/WindowsPowerShell/Microsoft.Powershell_profile.ps1`.
-- macOS -- `~/.config/powershell/Microsoft.Powershell_profile.ps1`
+- Windows
+  - PowerShell 5.1 -- `$HOME/Documents/WindowsPowerShell/Microsoft.PowerShell_profile.ps1`.
+  - PowerShell 7 -- `$HOME/Documents/PowerShell/Microsoft.PowerShell_profile.ps1`
+- macOS -- `~/.config/powershell/Microsoft.PowerShell_profile.ps1`
 
 ```powershell
-cmd /c mklink /path/to/symlink/Microsoft.Powershell_profile.ps1 /path/to/Microsoft.Powershell_profile.ps1
-# And so on for each file sourced by the Microsoft.Powershell_profile.ps1
+cmd /c mklink /path/to/symlink/Microsoft.PowerShell_profile.ps1 /path/to/Microsoft.PowerShell_profile.ps1
+# And so on for each file sourced by the Microsoft.PowerShell_profile.ps1
 ```
 
 ## .powershell.d
