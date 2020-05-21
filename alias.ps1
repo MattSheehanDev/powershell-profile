@@ -7,6 +7,9 @@ function Git-Add {
     & git add $args
     & git status
 }
+function Git-Commit {
+    & git commit $args
+}
 function Git-Status {
     & git status $args
 }
@@ -22,6 +25,9 @@ function Git-Reset-Soft {
 }
 function Git-Reset-Hard {
     Git-Reset --hard
+}
+function Git-Log {
+    & git log --pretty=oneline $args
 }
 
 function Git-Branch {
@@ -42,6 +48,8 @@ New-Alias -Name gs -Value Git-Status -Force -Option AllScope -Description "git s
 New-Alias -Name ga -Value Git-Add -Force -Option AllScope -Description "git add & git status"
 New-Alias -Name gc -Value Git-Commit -Force -Option AllScope -Description "git commit"
 New-Alias -Name gp -Value Git-Push -Force -Option AllScope -Description "git push"
+New-Alias -Name gl -Value Git-Log -Force -Option AllScope -Description "git log --pretty=oneline"
+New-Alias -Name gb -Value Git-Branch -Force -Option AllScope -Description "git branch"
 
 New-Alias -Name gr -Value Git-Push -Force -Option AllScope -Description "git reset"
 New-Alias -Name grs -Value Git-Push -Force -Option AllScope -Description "git reset soft"
