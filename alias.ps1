@@ -14,7 +14,7 @@ function Git-Status {
     & git status $args
 }
 function Git-Push {
-    & git push
+    & git push $args
     & git status
 }
 function Git-Reset {
