@@ -26,10 +26,10 @@ function version {
 . "$PSScriptRoot/azure.ps1"
 
 
-if ((Get-OS-Architecture) -eq "win32NT") {
+if ($IsWindows) {
     . "$PSScriptRoot\profile.windows.ps1"
 }
-else {
+elseif ($IsMacOS) {
     . "$PSScriptRoot/profile.macos.ps1"
 }
 

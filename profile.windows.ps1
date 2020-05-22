@@ -28,7 +28,7 @@ function Open-Hosts () {
 # Open admin powershell in the current directory
 function Open-Admin-Shell() {
     $path = (cwd).Path
-    Start-Process PowerShell -Verb RunAs -ArgumentList "-noexit -command `"cd `"${path}`" `""
+    Start-Process pwsh -Verb RunAs -ArgumentList "-noexit -command `"cd `"${path}`" `""
 }
 
 
