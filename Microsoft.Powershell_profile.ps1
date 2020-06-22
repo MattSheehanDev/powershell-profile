@@ -38,6 +38,9 @@ elseif ($IsMacOS) {
 if (Test-Path "~/.powershell.d/posh-git/src/posh-git.psd1") {
     Import-Module ~/.powershell.d/posh-git/src/posh-git.psd1
 }
+if (Test-Path "~/.powershell.d/ZLocation/ZLocation/ZLocation.psd1") {
+    Import-Module ~/.powershell.d/ZLocation/ZLocation/ZLocation.psd1
+}
 # Install-Package SemanticVersioning -Version 1.2.2
 # Import-Module ~/.powershell.d/ps-nvm/nvm.psd1
 
