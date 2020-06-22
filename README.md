@@ -16,4 +16,4 @@ Alias (or add) all files to your local user (host) profile.
 
 - External packages
     - [posh-git](https://github.com/dahlbyk/posh-git)
-
+    - [ZLocation](https://github.com/vors/ZLocation)
