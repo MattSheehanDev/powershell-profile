@@ -43,3 +43,8 @@ $Env:YARN_CACHE_FOLDER = "E:\AppCache\Yarn"
 # Set npm cache dir to D: drive as well
 $Env:npm_config_cache = "E:\AppCache\npm-cache"
 
+
+# Azure Environment Variables for code integration
+$Env:AZURE_USERNAME = "Matt.Sheehan@apteryxinc.onmicrosoft.com"
+$Env:AZURE_TENANT_ID = "f651915b-4ca2-4594-b53d-b5dd443bf7a5"
+
