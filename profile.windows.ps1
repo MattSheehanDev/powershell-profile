@@ -32,6 +32,12 @@ function Open-Admin-Shell() {
 }
 
 
+
+if (Test-Path "C:\PortQryV2") {
+    New-Alias -Name portquery -Value "C:\PortQryV2\PortQry.exe" -Force -Option AllScope -Description "PortQry.exe"
+}
+
+
 #
 # Windows specific environment variables
 #
