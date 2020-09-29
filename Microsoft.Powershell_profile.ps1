@@ -34,6 +34,12 @@ elseif ($IsMacOS) {
 }
 
 
+# Secrets
+if (Test-Path "$PSScriptRoot/profile.secrets.ps1") {
+    . "$PSScriptRoot/profile.secrets.ps1"
+}
+
+
 # Import Modules
 if (Test-Path "~/.powershell.d/posh-git/src/posh-git.psd1") {
     Import-Module ~/.powershell.d/posh-git/src/posh-git.psd1
@@ -43,6 +49,7 @@ if (Test-Path "~/.powershell.d/ZLocation/ZLocation/ZLocation.psd1") {
 }
 # Install-Package SemanticVersioning -Version 1.2.2
 # Import-Module ~/.powershell.d/ps-nvm/nvm.psd1
+
 
 
 # Set the shell Prompt
