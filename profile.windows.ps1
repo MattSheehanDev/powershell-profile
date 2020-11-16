@@ -49,3 +49,17 @@ $Env:YARN_CACHE_FOLDER = "E:\AppCache\Yarn"
 # Set npm cache dir to D: drive as well
 $Env:npm_config_cache = "E:\AppCache\npm-cache"
 
+
+#
+# Winget
+#
+# Add tab completion based off https://github.com/microsoft/winget-cli/blob/master/doc/Completion.md
+Register-ArgumentCompleter -Native -CommandName winget -ScriptBlock {
+    param($wordToComplete, $commandAst, $cursorPosition)
+        [Console]::InputEncoding = [Console]::OutputEncoding = $OutputEncoding = [System.Text.Utf8Encoding]::new()
+        $Local:word = $wordToComplete.Replace('"', '""')
+        $Local:ast = $commandAst.ToString().Replace('"', '""')
+        winget complete --word="$Local:word" --commandline "$Local:ast" --position $cursorPosition | ForEach-Object {
+            [System.Management.Automation.CompletionResult]::new($_, $_, 'ParameterValue', $_)
+        }
+}
