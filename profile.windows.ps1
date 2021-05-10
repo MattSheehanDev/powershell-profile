@@ -47,7 +47,7 @@ if (Test-Path "C:\PortQryV2") {
 # $Env:YARN_CACHE_FOLDER = "E:\AppCache\Yarn"
 
 # Set npm cache dir to D: drive as well
-$Env:npm_config_cache = "E:\AppCache\npm-cache"
+$Env:npm_config_cache = "D:\AppCache\npm-cache"
 
 
 #

@@ -10,7 +10,7 @@ Additional Microsoft [Documentation](https://docs.microsoft.com/en-us/powershell
 
 ## Setup
 
-- Run `initSetup.ps1` to symlink to the OS profile directory.
+- Run `initSetup.ps1` from an Administrator PowerShell 7 shell to symlink to the OS profile directory.
 
 
 ### .powershell.d

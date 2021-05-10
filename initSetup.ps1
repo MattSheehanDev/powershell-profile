@@ -2,6 +2,8 @@
 
 # Determine OS
 if ($IsWindows) {
+    New-Item -ItemType Directory -Force -Path "$HOME\Documents\PowerShell"
+
     # Setup for PowerShell 7 on macOS
     New-Item -ItemType SymbolicLink -Path "$HOME\Documents\PowerShell\Microsoft.PowerShell_profile.ps1" -Value "$PSScriptRoot\Microsoft.PowerShell_profile.ps1"
     New-Item -ItemType SymbolicLink -Path "$HOME\Documents\PowerShell\alias.ps1" -Value "$PSScriptRoot\alias.ps1"
