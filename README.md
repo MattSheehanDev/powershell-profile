@@ -13,7 +13,7 @@ Additional Microsoft [Documentation](https://docs.microsoft.com/en-us/powershell
 - Run `initSetup.ps1` from an Administrator PowerShell 7 shell to symlink to the OS profile directory.
 
 
-### .powershell.d
+### $HOME/.powershell.d
 
 - External packages
     - [posh-git](https://github.com/dahlbyk/posh-git)
