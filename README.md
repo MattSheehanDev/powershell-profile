@@ -15,6 +15,8 @@ Additional Microsoft [Documentation](https://docs.microsoft.com/en-us/powershell
 
 ### $HOME/.powershell.d
 
+Clone the following repos into `~/.powershell.d`.
+
 - External packages
     - [posh-git](https://github.com/dahlbyk/posh-git)
     - [ZLocation](https://github.com/vors/ZLocation)
