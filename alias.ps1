@@ -43,8 +43,8 @@ function Docker-ListImages {
 
 
 
-# Aliases
-New-Alias -Name gs -Value Git-Status -Force -Option AllScope -Description "git status"
+# Git Aliases
+New-Alias -Name gst -Value Git-Status -Force -Option AllScope -Description "git status"
 New-Alias -Name ga -Value Git-Add -Force -Option AllScope -Description "git add & git status"
 New-Alias -Name gc -Value Git-Commit -Force -Option AllScope -Description "git commit"
 New-Alias -Name gp -Value Git-Push -Force -Option AllScope -Description "git push"
@@ -58,7 +58,11 @@ New-Alias -Name grh -Value Git-Push -Force -Option AllScope -Description "git re
 New-Alias -Name b -Value Git-Branch -Force -Option AllScope -Description "git branch"
 New-Alias -Name b -Value Git-Checkout -Force -Option AllScope -Description "git checkout"
 
+# Docker Aliases
 New-Alias -Name dli -Value Docker-ListImages -Force -Option AllScope -Description "docker list images"
+
+# Kubernetes Aliases
+New-Alias -Name k -Value kubectl -Option AllScope -Description "kubectl"
 
 New-Alias -Name cwd -Value Get-Location -Option AllScope -Description "current working dir"
 New-Alias -Name flushdns -Value Flush-DNS -Option AllScope -Description "flush dns"
@@ -67,4 +71,3 @@ New-Alias -Name hosts -Value Open-Hosts -Option AllScope -Description "open host
 New-Alias -Name npmcc -Value Npm-Clean-Cache -Option AllScope -Description "npm clean cache"
 
 New-Alias -Name admin -Value Open-Admin-Shell -Option AllScope -Description "open administrator powershell"
-

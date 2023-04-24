@@ -42,12 +42,12 @@ if (Test-Path "C:\PortQryV2") {
 # Windows specific environment variables
 #
 
-# # Set yarn cache dir to D: drive so that it doesn't take up to much main drive space.
+# # Set yarn cache dir to known drive so that it doesn't take up to much main drive space.
 # # https://yarnpkg.com/lang/en/docs/cli/cache/#toc-change-the-cache-path-for-yarn
 # $Env:YARN_CACHE_FOLDER = "E:\AppCache\Yarn"
 
-# Set npm cache dir to D: drive as well
-$Env:npm_config_cache = "D:\AppCache\npm-cache"
+# Set npm cache dir to drive as well
+$Env:npm_config_cache = "C:\AppCache\npm-cache"
 
 
 #
